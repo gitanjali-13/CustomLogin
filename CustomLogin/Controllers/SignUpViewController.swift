@@ -92,7 +92,7 @@ class SignUpViewController: UIViewController {
                     let db = Firestore.firestore()
                     
                     //adding new data using .document().setData() methods
-//                    db.collection("users").document(result!.user.uid).setData(["firstname" : firstName,"lastname": lastName,"email" : email, "password" : password,"uid": result!.user.uid])
+                    db.collection("users").document(result!.user.uid).setData(["firstname" : firstName,"lastname": lastName,"email" : email, "password" : password,"uid": result!.user.uid])
                     
                     // using getDocument(completion:) we can retrieve data from dashboard.
 //                    db.collection("users").document(result!.user.uid).getDocument { snapshot , err in
@@ -100,17 +100,17 @@ class SignUpViewController: UIViewController {
 //                            self.showError("error in saving user data")
 //                        }
 //                    }
-//                    
+//
                     
                      //adding new data using .addDocument()
-                    db.collection("users").addDocument(data: ["firstname": firstName, "lastname": lastName, "uid": result!.user.uid])
-                    { error in
-
-                        if error != nil {
-                            self.showError("error saving dada")
-
-                        }
-                    }
+//                    db.collection("users").addDocument(data: ["firstname": firstName, "lastname": lastName, "uid": result!.user.uid])
+//                    { error in
+//
+//                        if error != nil {
+//                            self.showError("error saving dada")
+//
+//                        }
+//                    }
                     //transition to home page
                     self.transitionToHome()
                 }
